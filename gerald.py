@@ -15,8 +15,14 @@ ppResponses = ["damn bro your cock is HOT", "mmm i dont know about that one bro"
                "yo, can i get a closer look at that? :flushed:", "disgusting.", "that is a perfect cock. amazing"
                                                                                 " length, balls, and amazingly clean",
                "No."]
+randomFacts = ["Due to it's location on the San Andreas fault, California will soon split apart and parts of the state will fall into the ocean",
+               "Listening to Ed Sheeran for a prolonged period of time can cause your lifespan to decrease", 
+               "Kevin Durant, one of the athletes on the Manchester City soccer team, has scored the most touchdowns in MLB history.", "Italy isn't real", 
+               "All people with red hair will be possessed Markiplier. Similar to this, all people with light blue hair will become possessed by Ninja."]
+jokes = ['You.', 'Hey do you like Chef Boyardee? ||Chef Boy-Are-Deez nuts tasty!||', 'Do you remember that one Ed Sheeran lyric? ||Oh, I got it: "Will you remember "
+         "the taste of **deez nuts** :smiling_imp:||"] # my creativity in these jokes are lacking feel free to add more
 
-token = 'ODY1MzM3MTc5NDAzNDUyNDcw.YPCiDA.e6SK0FEWzsrwxDHtTBomiTwwDyg'
+token = 'token placeholder here'
 bot = commands.Bot(command_prefix='gerald')
 
 bot.remove_command("help")
@@ -28,7 +34,7 @@ bot.remove_command("help")
 async def on_ready():
     change_status.start()
     print("gerald running")
-    await bot.change_presence(activity=discord.Game('ethan sus'))
+    await bot.change_presence(activity=discord.Game('use "gerald help" to see my website and view commands '))
 
 # gerald responses
 
@@ -126,6 +132,19 @@ async def on_message(message):
     if message.content.startswith('roll a dice'):
         n = random.randint(1, 6)
         await message.channel.send(n)
+        
+    if message.content.startswith('you suck'):
+        await message.channel.send('ok when robots figure out how to kill humans youll be the first one to go asshole :middle_finger:')
+       
+    if message.content.startswith('give me free nitro' or 'free nitro'):
+        await message.channel.send('ok, you know what? you guys have been a great server. you deserve this. here you go! free nitro! https://bit.ly/FreeDiscordNitroNoCapWorks2021/"
+        
+    if message.content.startswith('tell me a random fact'):
+        await message.channel.send(random.choice(randomFacts))
+                                   
+    if message.content.startwith('tell me a joke'):
+        await message.channel.send(random.choice(jokes))
+                                   
 
 
 @bot.group(invoke_without_command=True)
