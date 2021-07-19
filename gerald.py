@@ -137,7 +137,7 @@ async def on_message(message):
         await message.channel.send('ok when robots figure out how to kill humans youll be the first one to go asshole :middle_finger:')
        
     if message.content.startswith('give me free nitro' or 'free nitro'):
-        await message.channel.send('ok, you know what? you guys have been a great server. you deserve this. here you go! free nitro! https://bit.ly/FreeDiscordNitroNoCapWorks2021/"
+        await message.channel.send('ok, you know what? you guys have been a great server. you deserve this. here you go! free nitro! https://bit.ly/FreeDiscordNitroNoCapWorks2021/")
         
     if message.content.startswith('tell me a random fact'):
         await message.channel.send(random.choice(randomFacts))
