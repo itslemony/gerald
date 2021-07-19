@@ -14,12 +14,29 @@ ppResponses = ["damn bro your cock is HOT", "mmm i dont know about that one bro"
                "mmmmmmm thats a nice cock :weary:", "shut it with your cock rating, its time for the taste test",
                "yo, can i get a closer look at that? :flushed:", "disgusting.", "that is a perfect cock. amazing"
                                                                                 " length, balls, and amazingly clean",
-               "No."]
+               "No.", ":microscope:", "bro what the fuck where is it i cant even see it", "SMELLY ALERT :rotating"
+                                                                                          "_light:",
+               "stop. i dont wanna see that shit anymore."]
+randomFacts = ["Due to it's location on the San Andreas fault, California will soon split apart and parts of the state "
+               "will fall into the ocean",
+               "Listening to Ed Sheeran for a prolonged period of time can cause your lifespan to decrease",
+               "Kevin Durant, one of the athletes on the Manchester City soccer team, has scored the most touchdowns "
+               "in MLB history.", "Italy isn't real",
+               "All people with red hair are secretly Markiplier. Similar to this, all people with light "
+               "blue hair are secretly Ninja from Fortnite."]
+jokes = ['You.', 'Hey do you like Chef Boyardee? ||Chef Boy-Are-Deez nuts tasty :weary:||', 'What do you call a train '
+         'that'
+         'is carrying bubblegum? '
+         '|| a chew-chew train'
+         ' :smiling-imp: ||',
+         'Look in the mirror.']
 
-token = 'ODY1MzM3MTc5NDAzNDUyNDcw.YPCiDA.e6SK0FEWzsrwxDHtTBomiTwwDyg'
+
+
+
+token = 'insert token'
 bot = commands.Bot(command_prefix='gerald')
 
-bot.remove_command("help")
 
 # starting up the bot
 
@@ -28,7 +45,8 @@ bot.remove_command("help")
 async def on_ready():
     change_status.start()
     print("gerald running")
-    await bot.change_presence(activity=discord.Game('ethan sus'))
+    await bot.change_presence(activity=discord.Game('use "gerald help" to see my website and view commands'))
+
 
 # gerald responses
 
@@ -56,7 +74,7 @@ async def on_message(message):
     if message.content.startswith('among'):
         await message.channel.send('us')
 
-    if message.content.startswith('server link?'):
+    if message.content.startswith('gerald server'):
         await message.channel.send('here you go: https://discord.gg/mG2HT9Gy2J')
 
     if message.content.startswith('who is the impostor?'):
@@ -83,9 +101,6 @@ async def on_message(message):
     if message.content.startswith('arbys'):
         await message.channel.send('we have the meats')
 
-    if message.content.startswith('jaymel'):
-        await message.channel.send('jaymel is very awesome')
-
     if message.content.startswith('hello gerald'):
         await message.channel.send("hello, " + message.author.mention)
 
@@ -95,50 +110,70 @@ async def on_message(message):
     if message.content.startswith('hello Gerald'):
         await message.channel.send("hello, " + message.author.mention)
 
-    if message.content.startswith('flip a coin'):
+    if message.content.startswith('gerald flip a coin'):
         await message.channel.send(random.choice(flipACoin))
 
-    if message.content.startswith('8ball'):
+    if message.content.startswith('gerald 8ball'):
         await message.channel.send(random.choice(eightball))
 
-    if message.content.startswith('cock rate'):
+    if message.content.startswith('gerald cock rate'):
         await message.channel.send(random.choice(ppResponses))
 
-    if message.content.startswith('bad song'):
+    if message.content.startswith('gerald bad song'):
         await message.channel.send("https://www.youtube.com/watch?v=lx-__lBS6a4")
 
-    if message.content.startswith('good song'):
+    if message.content.startswith('gerald good song'):
         await message.channel.send("https://www.youtube.com/watch?v=YeQGPbGJa4g&t=1s")
 
     if message.content.startswith('we do some trollin'):
         await message.channel.send('https://i.kym-cdn.com/photos/images/masonry/002/052/328/fdd.gif')
 
-    if message.content.startswith('random number'):
+    if message.content.startswith('gerald random number'):
         n = random.randint(0, 100)
         await message.channel.send(n)
 
-    if message.content.startswith('stupid rate'):
+    if message.content.startswith('gerald stupid rate'):
         n = random.randint(0, 100)
         n_as_string = str(n)
         stupidrating = "you are " + n_as_string + "% stupid"
         await message.channel.send(stupidrating)
 
-    if message.content.startswith('roll a dice'):
-        n = random.randint(1, 6)
-        await message.channel.send(n)
+    if message.content.startswith('gerald help'):
+        await message.channel.send('heres my website: https://geraldshrine.w3spaces.com/inde'
+                                   'x.html?bypass-cache=1626657983')
 
+    if message.content.startswith('gerald ping'):
+        await message.channel.send(f'pong B) ({round(bot.latency * 1000)}ms)')
 
-@bot.group(invoke_without_command=True)
-async def help(ctx):
-    em = discord.Embed(title="bruh", description="bruhhuh")
+    if message.content.startswith('gerald account age'):
+        user = message.author
+        await message.channel.send(user.created_at)
 
-    await ctx.send(embed=em)
+    if message.content.startswith('thank you gerald'):
+        await message.channel.send('ur welcome, ' + message.author.mention + '!')
 
+    if message.content.startswith('thank you, gerald'):
+        await message.channel.send('ur welcome, ' + message.author.mention + '!')
 
-@help.command()
-async def helping(ctx):
-    em = discord.Embed(title="brah", description="brahhshh")
-    await ctx.send(embed=em)
+    if message.content.startswith('thanks gerald'):
+        await message.channel.send('ur welcome, ' + message.author.mention + '!')
+
+    if message.content.startswith('thanks. gerald'):
+        await message.channel.send('ur welcome, ' + message.author.mention + '!')
+
+    if message.content.startswith('you suck gerald'):
+        await message.channel.send(
+            'ok when robots figure out how to kill humans youll be the first one to go asshole :middle_finger:')
+
+    if message.content.startswith('give me free nitro' or 'free nitro'):
+        await message.channel.send('ok, you know what? you guys have been a great server. you deserve this. '
+                                   'here you go! free nitro! https://bit.ly/3ix8VHI')
+
+    if message.content.startswith('gerald fact'):
+        await message.channel.send(random.choice(randomFacts))
+
+    if message.content.startswith('gerald joke'):
+        await message.channel.send(random.choice(jokes))
 
 # gerald saying a certain message every hour
 
