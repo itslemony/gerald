@@ -17,24 +17,45 @@ ppResponses = ["damn bro your cock is HOT", "mmm i dont know about that one bro"
                "No.", ":microscope:", "bro what the fuck where is it i cant even see it", "SMELLY ALERT :rotating"
                                                                                           "_light:",
                "stop. i dont wanna see that shit anymore."]
+geraldhatred = [" I'm so unbelievably done with you. I truly cannot deal with your bullshit anymore and it's entirely "
+                "your fault. You're too stupid to realize how lucky you are. Your situation is like a wet dream for "
+                "every boy your age. Have you ever thought about how fortunate you are that a pretty high school girl "
+                "even bothered to be on your level of existence? Are you just that idiotic? And what about me? Do you "
+                "know how demoralizing it is to be ghosted and ignored by a fucking 8th grader? You are such a piece "
+                "of "
+                "shit 'WinWin'(and what the fuck kinda name is WinWin anyway?) Do you even think, like, at all? I bet "
+                "you're an unpopular bitch in middle school and you spend half your time in class "
+                "dreaming "
+                "of being a footrest for some 5/10 with braces and glasses. Your personality is probably "
+                "being rude to people and getting annoyed when they're upset and also having blue eyes. I gave you "
+                "time "
+                "out of my day and listened to your bullshit but the first time I call your fuckboy ass for anything "
+                "besides you you ignore me. I can't help but feel like you're probably the biggest fucking piece of "
+                "shit"
+                " in your entire school. You're like bubble gum on the bottom of my shoe and the world would be better"
+                " without you. Kys :heart:"]
 randomFacts = ["Due to it's location on the San Andreas fault, California will soon split apart and parts of the state "
                "will fall into the ocean",
                "Listening to Ed Sheeran for a prolonged period of time can cause your lifespan to decrease",
                "Kevin Durant, one of the athletes on the Manchester City soccer team, has scored the most touchdowns "
                "in MLB history.", "Italy isn't real",
                "All people with red hair are secretly Markiplier. Similar to this, all people with light "
-               "blue hair are secretly Ninja from Fortnite."]
+               "blue hair are secretly Ninja from Fortnite.", "Your penis is small.", "I had sex with your mom last "
+               "night", "Australia is upside-down.", "The Earth is shaped like a pear.", "PEE IS IN THE BALLS"]
 jokes = ['You.', 'Hey do you like Chef Boyardee? ||Chef Boy-Are-Deez nuts tasty :weary:||', 'What do you call a train '
-         'that'
+         'that '
          'is carrying bubblegum? '
          '|| a chew-chew train'
-         ' :smiling-imp: ||',
+         ' :smiling_imp: ||',
          'Look in the mirror.']
+geraldEmotion = ["i'm doing pretty good, thanks for asking", "things could definitely be a lot better", "life is shit."
+                 "not very good. jaymel is keeping me hostage.", "i'm tired", "im great, thanks", "i dont know anymore"
+                 "help", "thank you for asking, im doing okay B)"]
 
+songs = [r"C:\Users\April\Downloads\Wellerman.mp3", r"C:\Users\April\Downloads\God.mp3",
+         r"C:\Users\April\Downloads\Sus.mp3"]
 
-
-
-token = 'insert token'
+token = 'token'
 bot = commands.Bot(command_prefix='gerald')
 
 
@@ -119,6 +140,9 @@ async def on_message(message):
     if message.content.startswith('gerald cock rate'):
         await message.channel.send(random.choice(ppResponses))
 
+    if message.content.startswith('how are you gerald'):
+        await message.channel.send(random.choice(geraldEmotion))
+
     if message.content.startswith('gerald bad song'):
         await message.channel.send("https://www.youtube.com/watch?v=lx-__lBS6a4")
 
@@ -161,19 +185,74 @@ async def on_message(message):
     if message.content.startswith('thanks. gerald'):
         await message.channel.send('ur welcome, ' + message.author.mention + '!')
 
+    if message.content.startswith('i love u gerald'):
+        elif message.author.id == 270104205472038912:
+            await message.channel.send('fuck you dad')
+        else:
+            await message.channel.send('ayo??? :flushed:')
+
+    if message.content.startswith('i love you gerald'):
+        elif message.author.id == 270104205472038912:
+            await message.channel.send('fuck you dad')
+        else:
+            await message.channel.send('ayo??? :flushed:')
+
+    if message.content.startswith('i love u, gerald'):
+        elif message.author.id == 270104205472038912:
+            await message.channel.send('fuck you dad')
+        else:
+            await message.channel.send('ayo??? :flushed:')
+
+    if message.content.startswith('i hate you gerald'):
+        await message.channel.send(random.choice(geraldhatred))
+
+    if message.content.startswith('I hate you gerald'):
+        await message.channel.send(random.choice(geraldhatred))
+
+    if message.content.startswith('i hate u gerald'):
+        await message.channel.send(random.choice(geraldhatred))
+
+    if message.content.startswith('i hate u, gerald'):
+        await message.channel.send(random.choice(geraldhatred))
+
+    if message.content.startswith('i hate you, gerald'):
+        await message.channel.send(random.choice(geraldhatred))
+
     if message.content.startswith('you suck gerald'):
         await message.channel.send(
             'ok when robots figure out how to kill humans youll be the first one to go asshole :middle_finger:')
 
     if message.content.startswith('give me free nitro' or 'free nitro'):
         await message.channel.send('ok, you know what? you guys have been a great server. you deserve this. '
-                                   'here you go! free nitro! https://bit.ly/3ix8VHI')
+                                   'here you go! free nitro! <https://bit.ly/3ix8VHI>')
 
     if message.content.startswith('gerald fact'):
         await message.channel.send(random.choice(randomFacts))
 
     if message.content.startswith('gerald joke'):
         await message.channel.send(random.choice(jokes))
+
+    if message.content.startswith('gerald join'):
+        vc = message.author.voice.channel
+        if vc:
+            await vc.connect()
+        else:
+            await message.channel.send('you arent in a vc dingus')
+
+    if message.content.startswith('gerald disconnect'):
+        server = message.guild
+        voice_client = server.voice_client
+        await voice_client.disconnect()
+
+    if message.content.startswith('gerald dc'):
+        server = message.guild
+        voice_client = server.voice_client
+        await voice_client.disconnect()
+
+    if message.content.startswith('gerald play me a song'):
+        vc = await message.author.voice.channel.connect()
+        vc.play(discord.FFmpegPCMAudio(executable="C:/ffmpeg/bin/ffmpeg.exe", source=random.choice(songs)))
+        await message.channel.send('now playing a very cool song B)')
 
 # gerald saying a certain message every hour
 
