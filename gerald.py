@@ -121,6 +121,9 @@ async def on_message(message):
 
     if message.content.startswith('arbys'):
         await message.channel.send('we have the meats')
+        
+    if message.content.startswith('deez'):
+        await message.channel.send('nuts')
 
     if message.content.startswith('hello gerald'):
         await message.channel.send("hello, " + message.author.mention)
